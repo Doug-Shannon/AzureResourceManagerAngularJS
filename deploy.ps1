@@ -28,7 +28,7 @@ $websitePackage = ".\dist\website.zip"
 # Upload packages
 $storageCtx = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 if (-Not (Get-AzureStorageContainer -Context $storageCtx | Where-Object { $_.Name -eq "packages" }) ) {
-	New-AzureStorageContainer -Name "packages" -Context $storageCtx -Permission Blob
+	New-AzureStorageContainer -Name "packages" -Context $storageCtx -Permission Off
 }
 Set-AzureStorageBlobContent -File $websitePackage -Container "packages" -Blob website.zip -Context $storageCtx -Force
 $uploadedPackage = "https://$storageAccountName.blob.core.windows.net/packages/website.zip"
