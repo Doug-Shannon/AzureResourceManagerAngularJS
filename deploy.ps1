@@ -5,8 +5,8 @@ $storageAccountName = "armangularsamplesa"
 $location = "West Europe"
 $siteName = "ArmAngularSampleWebsite"
 
-# Configure Azure and the Powershell shell
-Select-AzureSubscription -SubscriptionId a41bc6ea-b24a-400f-b630-e2201c5a513f
+# Configure Azure and the Powershell shell - select a subscription if you have multiple
+# Select-AzureSubscription -SubscriptionId {{your-subscription-id}}
 Switch-AzureMode AzureResourceManager
 
 # Create Azure Resoure Group
